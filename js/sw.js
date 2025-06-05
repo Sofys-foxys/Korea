@@ -3,7 +3,7 @@ const OFFLINE_URL = '/offline.html';
 
 const urlsToCache = [
   '../index.html',
-  '../offline.html'
+  '../offline.html',
   '../css/index.css',
   '../css/styles.css',
   './app.js'
