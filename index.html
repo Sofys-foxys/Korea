@@ -1,2 +1,47 @@
-hello world
-vamos a hacer otro commit nuevo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3367D6" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>My PWA</title>
+</head>
+<body>
+  <h1>Hello, PWA!</h1>
+  <p>This is a simple Progressive Web App built with vanilla JavaScript.</p>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log('Service Worker registered'))
+          .catch(err => console.error('Service Worker registration failed:', err));
+      });
+
+      // Install prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        const installBtn = document.createElement('button');
+        installBtn.textContent = 'Install App';
+        installBtn.onclick = () => {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(choiceResult => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        };
+        document.body.appendChild(installBtn);
+      });
+    }
+  </script>
+</body>
+</html>
