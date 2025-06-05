@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <base href="/Korea/">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#3367D6" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="./css/index.css" />
-  <link rel="icon" href="assets/icons/favicons/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png" />
- <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png" />
-  <title>My PWA</title>
-</head>
-<body>
-  <h1>Hello, PWA!</h1>
-  <p>This is a simple Progressive Web App built with vanilla JavaScript.</p>
+    <head>
+        <base href="/Korea/">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#3367D6" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="icon" href="assets/icons/favicons/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png" />
+        <title>Korea</title>
+    </head>
+    <body>
+        <h1>Hello, this is the basis for the PWA site for Visit Korea by Sophys</h1>
+        <p>The Web site will be expanded with information about my 2024 stay in Korea</p>
 
-  <script src="./js/app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./js/sw.js')
-          .then(() => console.log('Service Worker registered'))
-          .catch(err => console.error('Service Worker registration failed:', err));
-      });
+        <script src="./js/app.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./js/sw.js')
+                            .then(() => console.log('Service Worker registered'))
+                            .catch(err => console.error('Service Worker registration failed:', err));
+                });
 
-      // Install prompt
-      let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        const installBtn = document.createElement('button');
-        installBtn.textContent = 'Install App';
-        installBtn.onclick = () => {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(choiceResult => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the install prompt');
-            } else {
-              console.log('User dismissed the install prompt');
+                // Install prompt
+                let deferredPrompt;
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    deferredPrompt = e;
+
+                    // Check if already installed
+                    const isInstalled = window.matchMedia('(display-mode: standalone)').matches
+                            || window.navigator.standalone === true;
+
+                    if (isInstalled) {
+                        // Don't show install button if already installed
+                        return;
+                    }
+                    const installBtn = document.createElement('button');
+                    installBtn.textContent = 'Install App';
+                    installBtn.onclick = () => {
+                        deferredPrompt.prompt();
+                        deferredPrompt.userChoice.then(choiceResult => {
+                            if (choiceResult.outcome === 'accepted') {
+                                console.log('User accepted the install prompt');
+                            } else {
+                                console.log('User dismissed the install prompt');
+                            }
+                            deferredPrompt = null;
+                        });
+                    };
+                    document.body.appendChild(installBtn);
+                });
             }
-            deferredPrompt = null;
-          });
-        };
-        document.body.appendChild(installBtn);
-      });
-    }
-  </script>
-</body>
+        </script>
+    </body>
 </html>
