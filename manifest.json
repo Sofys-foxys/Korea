@@ -1,7 +1,7 @@
 {
-  "name": "My PWA",
-  "short_name": "PWA",
-  "start_url": "/index.html",
+  "name": "Korea by Sophies",
+  "short_name": "Korea",
+  "start_url": "/Korea/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3367D6",
