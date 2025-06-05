@@ -15,11 +15,11 @@
   <h1>Hello, PWA!</h1>
   <p>This is a simple Progressive Web App built with vanilla JavaScript.</p>
 
-  <script src="app.js"></script>
+  <script src="./js/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
+        navigator.serviceWorker.register('./js/sw.js')
           .then(() => console.log('Service Worker registered'))
           .catch(err => console.error('Service Worker registration failed:', err));
       });
