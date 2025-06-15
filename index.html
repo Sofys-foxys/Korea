@@ -145,32 +145,44 @@
     </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector('.gallery-scroll');
+  const scrollContainer = document.querySelector(".gallery-scroll");
+  const images = document.querySelectorAll(".gallery-track img");
   const leftBtn = document.querySelector(".nav-btn.left");
   const rightBtn = document.querySelector(".nav-btn.right");
-  if (!gallery) return;
 
-  let scrollSpeed = 1; // pixels per frame
-  let scrollDirection = 1; // 1 = right, -1 = left
+  let currentIndex = 0;
+  const totalImages = images.length;
 
-  function autoScroll() {
-    gallery.scrollLeft += scrollSpeed * scrollDirection;
-
-    // Reverse direction at edges
-    if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
-      scrollDirection = -1;
-    } else if (gallery.scrollLeft <= 0) {
-      scrollDirection = 1;
-    }
-
-    requestAnimationFrame(autoScroll);
+  function scrollToIndex(index) {
+    if (!images[index]) return;
+    images[index].scrollIntoView({ behavior: "smooth", inline: "center" });
   }
 
-  // Manual navigation buttons
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    scrollToIndex(currentIndex);
+  }
+
+  function showPrevImage() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    scrollToIndex(currentIndex);
+  }
+
+  // Auto-scroll every 3 seconds
+  let autoScroll = setInterval(showNextImage, 3000);
+
+  // Pause auto-scroll on hover
+  scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
+  scrollContainer.addEventListener("mouseleave", () => {
+    autoScroll = setInterval(showNextImage, 3000);
+  });
+
+  // Manual controls
   leftBtn.addEventListener("click", () => {
     showPrevImage();
     resetAutoScroll();
   });
+
   rightBtn.addEventListener("click", () => {
     showNextImage();
     resetAutoScroll();
@@ -180,9 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(autoScroll);
     autoScroll = setInterval(showNextImage, 3000);
   }
-  autoScroll(); // Start the loop
+
+  // Initial scroll
+  scrollToIndex(currentIndex);
 });
 </script>
+
 
     <footer id="footer">
         <div class="container">
