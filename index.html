@@ -144,7 +144,6 @@
         }
     </script>
 
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   const scrollContainer = document.querySelector(".gallery-scroll");
   const images = document.querySelectorAll(".gallery-track img");
@@ -154,16 +153,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   const totalImages = images.length;
 
+  // Scroll to specific image, centered
   function scrollToIndex(index) {
     if (!images[index]) return;
     images[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+    currentIndex = index;
   }
 
+  // Show next image (loops)
   function showNextImage() {
     currentIndex = (currentIndex + 1) % totalImages;
     scrollToIndex(currentIndex);
   }
 
+  // Show previous image (loops)
   function showPrevImage() {
     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
     scrollToIndex(currentIndex);
@@ -172,18 +175,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Auto-scroll every 3 seconds
   let autoScroll = setInterval(showNextImage, 3000);
 
-  // Pause auto-scroll on hover
+  // Pause auto-scroll on mouse enter (hover)
   scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
   scrollContainer.addEventListener("mouseleave", () => {
     autoScroll = setInterval(showNextImage, 3000);
   });
 
-  // Manual controls
+  // Manual navigation buttons
   leftBtn.addEventListener("click", () => {
     showPrevImage();
     resetAutoScroll();
   });
-
   rightBtn.addEventListener("click", () => {
     showNextImage();
     resetAutoScroll();
@@ -194,10 +196,26 @@ document.addEventListener("DOMContentLoaded", () => {
     autoScroll = setInterval(showNextImage, 3000);
   }
 
-  // Initial scroll
+  // Parallax effect on scroll
+  scrollContainer.addEventListener("scroll", () => {
+    const scrollLeft = scrollContainer.scrollLeft;
+
+    images.forEach((img, i) => {
+      // Parallax multiplier controls depth
+      const parallaxShift = scrollLeft * 0.15 * (i + 1);
+
+      // Limit max shift to avoid excessive movement
+      const maxShift = 30;
+      const shift = parallaxShift > maxShift ? maxShift : parallaxShift;
+
+      img.style.transform = `translateX(${shift}px)`;
+    });
+  });
+
+  // Initial scroll position and parallax reset
   scrollToIndex(currentIndex);
 });
-</script>
+
 
     <footer id="footer">
         <div class="container">

@@ -133,7 +133,7 @@ footer {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  width: 80%;
+  width: 100%;
 }
 
 .gallery-track {
@@ -151,6 +151,8 @@ footer {
   transition: transform 0.3s ease;
   width: 100%;
   max-width: 300px;
+  will-change: transform;
+  user-select: none;
 }
 
 .nav-btn {
@@ -164,6 +166,7 @@ footer {
   padding: 0.5rem 1rem;
   cursor: pointer;
   z-index: 2;
+  user-select: none;
 }
 
 .nav-btn.left {
