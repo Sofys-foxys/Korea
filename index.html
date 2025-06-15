@@ -133,27 +133,28 @@
     </script>
 
 <script>
-  const gallery = document.querySelector('.gallery-scroll');
-  let scrollSpeed = 1; // pixels per frame
-  let scrollDirection = 1; // 1 = right, -1 = left
-
-  function autoScroll() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.querySelector('.gallery-scroll');
     if (!gallery) return;
 
-    gallery.scrollLeft += scrollSpeed * scrollDirection;
+    let scrollSpeed = 1; // pixels per frame
+    let scrollDirection = 1; // 1 = right, -1 = left
 
-    // Reverse direction at edges
-    if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
-      scrollDirection = -1;
-    } else if (gallery.scrollLeft <= 0) {
-      scrollDirection = 1;
+    function autoScroll() {
+      gallery.scrollLeft += scrollSpeed * scrollDirection;
+
+      // Reverse direction at edges
+      if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
+        scrollDirection = -1;
+      } else if (gallery.scrollLeft <= 0) {
+        scrollDirection = 1;
+      }
+
+      requestAnimationFrame(autoScroll);
     }
 
-    requestAnimationFrame(autoScroll);
-  }
-
-  // Start auto-scrolling
-  autoScroll();
+    autoScroll(); // Start the loop
+  });
 </script>
     <footer id="footer">
         <div class="container">
