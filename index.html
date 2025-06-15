@@ -155,7 +155,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function scrollToIndex(index) {
     if (!images[index]) return;
-    images[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+
+    const img = images[index];
+    // Calculate the left scroll position to center the image
+    const scrollPos = img.offsetLeft - (scrollContainer.clientWidth - img.clientWidth) / 2;
+
+    scrollContainer.scrollTo({
+      left: scrollPos,
+      behavior: "smooth"
+    });
   }
 
   function showNextImage() {
@@ -197,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollToIndex(currentIndex);
 });
 </script>
+
 
 
     <footer id="footer">
