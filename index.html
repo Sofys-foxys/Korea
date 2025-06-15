@@ -197,20 +197,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Parallax effect on scroll
-  scrollContainer.addEventListener("scroll", () => {
-    const scrollLeft = scrollContainer.scrollLeft;
+scrollContainer.addEventListener("scroll", () => {
+  const scrollLeft = scrollContainer.scrollLeft;
+  const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-    images.forEach((img, i) => {
-      // Parallax multiplier controls depth
-      const parallaxShift = scrollLeft * 0.15 * (i + 1);
+  // Calculate scroll percentage from 0 (start) to 1 (end)
+  const scrollPercent = maxScrollLeft === 0 ? 0 : scrollLeft / maxScrollLeft;
 
-      // Limit max shift to avoid excessive movement
-      const maxShift = 30;
-      const shift = parallaxShift > maxShift ? maxShift : parallaxShift;
+  const maxShift = 30; // max pixels to shift
 
-      img.style.transform = `translateX(${shift}px)`;
-    });
+  images.forEach((img, i) => {
+    // Shift each image proportionally by its index and scroll percent
+    const shift = maxShift * scrollPercent * ((i + 1) / images.length);
+
+    img.style.transform = `translateX(${shift}px)`;
   });
+});
 
   // Initial scroll position and parallax reset
   scrollToIndex(currentIndex);
