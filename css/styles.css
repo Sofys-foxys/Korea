@@ -129,11 +129,11 @@ footer {
 }
 
 .gallery-scroll {
-  overflow-x: auto;
+  overflow-x: hide;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
+  width: 80%;
 }
 
 .gallery-track {
@@ -175,5 +175,5 @@ footer {
 }
 
 .gallery-scroll:hover img {
-  transform: scale(1.05);
+  transform: scale(1.3);
 }
