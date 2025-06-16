@@ -1,8 +1,20 @@
+
 /* Reset + Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --header-bg-color: #1e88e5;
+  --header-color: white;
+}
+
+/*El tamaño de texto sigue estas normas: */
+:root {
+  /* Base line-height */
+  --line-height: 1.5;
 }
 
 body {
@@ -18,8 +30,8 @@ body {
 }
 
 header {
-  background: #1e88e5;
-  color: white;
+  background: var(--header-bg-color);
+  color: var(--header-color);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -30,8 +42,62 @@ header {
   flex-wrap: wrap;
 }
 
-header h1 {
-  margin: 0 1rem;
+/* Logo / Título Principal */
+h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem); /* entre 40px y 64px */
+  line-height: var(--line-height);
+  font-weight: 700;
+}
+
+/* Subtítulo principal (lema debajo del logo) */
+h2 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem); /* entre 24px y 40px */
+  line-height: var(--line-height);
+  font-weight: 500;
+}
+
+/* Título secundario (secciones) */
+h3 {
+  font-size: clamp(1.25rem, 1.5vw + 0.5rem, 2rem); /* 20px–32px */
+  line-height: var(--line-height);
+  font-weight: 600;
+}
+
+/* Título terciario (subsecciones) */
+h4 {
+  font-size: clamp(1.125rem, 1.2vw + 0.25rem, 1.5rem); /* 18px–24px */
+  line-height: var(--line-height);
+  font-weight: 600;
+}
+
+/* Subtítulo terciario o texto destacado */
+h5 {
+  font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem); /* 16px–20px */
+  line-height: var(--line-height);
+  font-weight: 500;
+}
+
+/* Texto de párrafo común */
+p, .body {
+  font-size: clamp(1rem, 0.8vw + 0.25rem, 1.125rem); /* 16px–18px */
+  line-height: var(--line-height);
+  font-weight: 400;
+}
+
+/* Texto pequeño, notas, pies de página */
+.small, footer, .meta {
+  font-size: clamp(0.75rem, 0.5vw + 0.25rem, 0.875rem); /* 12px–14px */
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
 }
 
 .nav-toggle {
@@ -49,6 +115,10 @@ header h1 {
   display: flex;
   gap: 1.5rem;
   margin: 1rem;
+ justify-content: flex-end;
+ position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -59,6 +129,29 @@ header h1 {
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+header #sound-toggle, #install-button {
+    background: var(--header-bg-color);
+    color: var(--header-color)
+}
+
+header #sound-toggle {
+  position: fixed;
+  right: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: 0;
+}
+
+#install-button {
+  position: fixed;
+  left: 2rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2;
+  border-color: var(--header-color)
 }
 
 .parallax {
@@ -94,13 +187,6 @@ header h1 {
   border-radius: 8px;
 }
 
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 2rem;
-}
 
 @media (max-width: 768px) {
   .nav-toggle {

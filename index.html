@@ -1,218 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <base href="/Korea/">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#3367D6" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="icon" href="assets/icons/favicons/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png" />
-    <title>Korea</title>
-</head>
+    <head>
+        <base href="/Korea/">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#3367D6" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="icon" href="assets/icons/favicons/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png" />
+        <title>Korea</title>
+    </head>
 
-<body>
+    <body>
 
-    <header>
-        <div class="container">
-            <h1>Trip to Korea</h1>
-            <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
-            <nav>
-                <ul class="navbar">
-                    <li><a href="#seoul">Seoul</a></li>
-                    <li><a href="#busan">Busan</a></li>
-                    <li><a href="#jeju">Jeju Island</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#map">Map</a></li>
-                    <li><a href="#footer">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <header>
+            <div class="container">
+                <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
+                <nav>
+                    <ul class="navbar">
+                        <li><a href="#thegirl">The Girl</a></li>
+                        <li><a href="#korea">Korea</a></li>
+                        <li><a href="#mystory">My Story</a></li>
+                        <li><a href="#travels">Travels</a></li>
+                        <li><a href="#exchange">Student Exchange</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <button id="sound-toggle">🔊 Sound On</button>
 
-    <section class="parallax">
-        <div class="overlay">
-            <h2>Explore Korea</h2>
-            <p>Discover amazing places and experiences</p>
-        </div>
-    </section>
+            <audio id="bg-sound" loop>
+                <source src="https://ik.imagekit.io/kzkvm3mnmc/welcome-to-korea-173264.mp3?updatedAt=1750079784483" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
-    <section id="seoul" class="full">
-        <div class="container">
-            <h2>Seoul</h2>
-            <p>The capital of South Korea, Seoul blends tradition with modernity. Visit Gyeongbokgung Palace, shop in
-                Myeongdong, and explore the vibrant Hongdae area.</p>
-            <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulRiver800x400_2c0JYrLO2?updatedAt=1750010941192?text=Seoul" alt="Seoul" />
-        </div>
-    </section>
+        </header>
 
-    <section id="busan" class="full">
-        <div class="container">
-            <h2>Busan</h2>
-            <p>Famous for its beaches, seafood, and coastal temples. Don’t miss Haeundae Beach, Jagalchi Market, and the
-                Gamcheon Culture Village.</p>
-            <img src="https://ik.imagekit.io/kzkvm3mnmc/busanCoast800x400_pO_S5FU-Q?updatedAt=1750011103158?text=Busan" alt="Busan" />
-        </div>
-    </section>
+        <section class="parallax">
+            <div class="overlay">
+                <h2>Explore Korea</h2>
+                <p>Discover amazing places and experiences</p>
+            </div>
+        </section>
 
-    <section id="jeju" class="full">
-        <div class="container">
-            <h2>Jeju Island</h2>
-            <p>A volcanic island known for its natural beauty. Hike Hallasan, explore lava tubes, and relax at Seongsan
-                Ilchulbong peak.</p>
-            <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuCoast800x400_KysJGFyWN?updatedAt=1750011172028?text=Jeju+Island" alt="Jeju Island" />
-        </div>
-    </section>
+        <section id="thegirl" class="full">
+            <div class="container">
+                <h2>Seoul</h2>
+                <p>The capital of South Korea, Seoul blends tradition with modernity. Visit Gyeongbokgung Palace, shop in
+                    Myeongdong, and explore the vibrant Hongdae area.</p>
+                <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulRiver800x400_2c0JYrLO2?updatedAt=1750010941192?text=Seoul" alt="Seoul" />
+            </div>
+        </section>
 
-<section id="gallery" class="gallery-section">
-  <div class="container">
-    <h2>Photo Gallery</h2>
+        <section id="korea" class="full">
+            <div class="container">
+                <h2>Busan</h2>
+                <p>Famous for its beaches, seafood, and coastal temples. Don’t miss Haeundae Beach, Jagalchi Market, and the
+                    Gamcheon Culture Village.</p>
+                <img src="https://ik.imagekit.io/kzkvm3mnmc/busanCoast800x400_pO_S5FU-Q?updatedAt=1750011103158?text=Busan" alt="Busan" />
+            </div>
+        </section>
 
-    <div class="gallery-wrapper">
-      <button class="nav-btn left">&#10094;</button>
+        <section id="mystory" class="full">
+            <div class="container">
+                <h2>Jeju Island</h2>
+                <p>A volcanic island known for its natural beauty. Hike Hallasan, explore lava tubes, and relax at Seongsan
+                    Ilchulbong peak.</p>
+                <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuCoast800x400_KysJGFyWN?updatedAt=1750011172028?text=Jeju+Island" alt="Jeju Island" />
+            </div>
+        </section>
 
-      <div class="gallery-scroll">
-        <div class="gallery-track">
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulLotteWorld300x200_BLUlpiB49?updatedAt=1750011501891" alt="Seoul Lotte World" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulTemple300x200_zjKhJcnfI?updatedAt=1750011554082" alt="Seoul Temple" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/namiIsland300x200_Gk-4A6dC8?updatedAt=1750011660790" alt="Nami Island" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuPark300x200_qJgaRW-dJ?updatedAt=1750011447781" alt="Jeju Park" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuStautues300x200_-1lSv-7sH?updatedAt=1750011387153" alt="Jeju Statues" />
-		  <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulLotteWorld300x200_BLUlpiB49?updatedAt=1750011501891" alt="Seoul Lotte World" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulTemple300x200_zjKhJcnfI?updatedAt=1750011554082" alt="Seoul Temple" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/namiIsland300x200_Gk-4A6dC8?updatedAt=1750011660790" alt="Nami Island" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuPark300x200_qJgaRW-dJ?updatedAt=1750011447781" alt="Jeju Park" />
-          <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuStautues300x200_-1lSv-7sH?updatedAt=1750011387153" alt="Jeju Statues" />
-        </div>
-      </div>
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>Photo Gallery</h2>
 
-      <button class="nav-btn right">&#10095;</button>
-    </div>
-  </div>
-</section>
+                <div class="gallery-wrapper">
+                    <button class="nav-btn left">&#10094;</button>
 
-    <section id="map" class="map-section">
-        <div class="container">
-            <h2>Interactive Map</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2323638.34563282!2d127.23882827404704!3d36.45508143693146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1749127082638!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
+                    <div class="gallery-scroll">
+                        <div class="gallery-track">
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulLotteWorld300x200_BLUlpiB49?updatedAt=1750011501891" alt="Seoul Lotte World" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulTemple300x200_zjKhJcnfI?updatedAt=1750011554082" alt="Seoul Temple" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/namiIsland300x200_Gk-4A6dC8?updatedAt=1750011660790" alt="Nami Island" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuPark300x200_qJgaRW-dJ?updatedAt=1750011447781" alt="Jeju Park" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuStautues300x200_-1lSv-7sH?updatedAt=1750011387153" alt="Jeju Statues" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulLotteWorld300x200_BLUlpiB49?updatedAt=1750011501891" alt="Seoul Lotte World" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/seoulTemple300x200_zjKhJcnfI?updatedAt=1750011554082" alt="Seoul Temple" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/namiIsland300x200_Gk-4A6dC8?updatedAt=1750011660790" alt="Nami Island" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuPark300x200_qJgaRW-dJ?updatedAt=1750011447781" alt="Jeju Park" />
+                            <img src="https://ik.imagekit.io/kzkvm3mnmc/jejuStautues300x200_-1lSv-7sH?updatedAt=1750011387153" alt="Jeju Statues" />
+                        </div>
+                    </div>
 
+                    <button class="nav-btn right">&#10095;</button>
+                </div>
+            </div>
+        </section>
 
-    <script src="./js/app.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./js/sw.js')
-                    .then(() => console.log('Service Worker registered'))
-                    .catch(err => console.error('Service Worker registration failed:', err));
-            });
-
-            // Install prompt
-            let deferredPrompt;
-            function isAppInstalled() {
-                return window.matchMedia('(display-mode: standalone)').matches
-                    || window.navigator.standalone === true;
-            }
-
-            if (!isAppInstalled()) {
-                window.addEventListener('beforeinstallprompt', (e) => {
-                    e.preventDefault();
-                    deferredPrompt = e;
-
-                    const installBtn = document.createElement('button');
-                    installBtn.textContent = 'Install App';
-                    installBtn.onclick = () => {
-                        deferredPrompt.prompt();
-                        deferredPrompt.userChoice.then(choiceResult => {
-                            if (choiceResult.outcome === 'accepted') {
-                                console.log('User accepted the install prompt');
-                                installBtn.style.display = 'none';
-                            } else {
-                                console.log('User dismissed the install prompt');
-                            }
-                            deferredPrompt = null;
-                        });
-                    };
-                    document.body.appendChild(installBtn);
-                });
-            }
-
-        }
-    </script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollContainer = document.querySelector(".gallery-scroll");
-  const images = document.querySelectorAll(".gallery-track img");
-  const leftBtn = document.querySelector(".nav-btn.left");
-  const rightBtn = document.querySelector(".nav-btn.right");
-
-  let currentIndex = 0;
-  const totalImages = images.length;
-
-  function scrollToIndex(index) {
-    if (!images[index]) return;
-
-    const img = images[index];
-    // Calculate the left scroll position to center the image
-    const scrollPos = img.offsetLeft - (scrollContainer.clientWidth - img.clientWidth) / 2;
-
-    scrollContainer.scrollTo({
-      left: scrollPos,
-      behavior: "smooth"
-    });
-  }
-
-  function showNextImage() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    scrollToIndex(currentIndex);
-  }
-
-  function showPrevImage() {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    scrollToIndex(currentIndex);
-  }
-
-  // Auto-scroll every 3 seconds
-  let autoScroll = setInterval(showNextImage, 3000);
-
-  // Pause auto-scroll on hover
-  scrollContainer.addEventListener("mouseenter", () => clearInterval(autoScroll));
-  scrollContainer.addEventListener("mouseleave", () => {
-    autoScroll = setInterval(showNextImage, 3000);
-  });
-
-  // Manual controls
-  leftBtn.addEventListener("click", () => {
-    showPrevImage();
-    resetAutoScroll();
-  });
-
-  rightBtn.addEventListener("click", () => {
-    showNextImage();
-    resetAutoScroll();
-  });
-
-  function resetAutoScroll() {
-    clearInterval(autoScroll);
-    autoScroll = setInterval(showNextImage, 3000);
-  }
-
-  // Initial scroll
-  scrollToIndex(currentIndex);
-});
-</script>
+        <section id="map" class="map-section">
+            <div class="container">
+                <h2>Interactive Map</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2323638.34563282!2d127.23882827404704!3d36.45508143693146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1749127082638!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
 
 
+        <script src="./js/app.js"></script>
 
-    <footer id="footer">
-        <div class="container">
-            <p>&copy; 2025 Trip to Korea. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+
+        <footer id="footer">
+            <div class="container">
+                <p>&copy; 2025 Trip to Korea. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
 
 </html>
