@@ -29,9 +29,10 @@
                     </ul>
                 </nav>
             </div>
-            <button id="sound-toggle">🔊 Sound On</button>
-
-            <audio id="bg-sound" loop>
+            
+            <!--default audio is off as most browsers mute it anyhow.-->
+            <button id="sound-toggle">🔇 Sound Off</button>
+            <audio id="bg-sound" loop muted>
                 <source src="https://ik.imagekit.io/kzkvm3mnmc/welcome-to-korea-173264.mp3?updatedAt=1750079784483" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
@@ -40,9 +41,12 @@
 
         <section class="parallax">
             <div class="overlay">
-                <h2>Explore Korea</h2>
-                <p>Discover amazing places and experiences</p>
+                <h1>My Korea</h1>
+                <h2>A short story of a girl falling in love with a country</h2>
+
+                <a href="#thegirl">Dive In</a>
             </div>
+
         </section>
 
         <section id="thegirl" class="full">
@@ -115,6 +119,7 @@
                 <p>&copy; 2025 Trip to Korea. All rights reserved.</p>
             </div>
         </footer>
+        <button id="scrollTopBtn" title="Go to top">↑</button>
     </body>
 
 </html>

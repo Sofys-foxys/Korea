@@ -5,10 +5,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --header-bg-color: #1e88e5;
   --header-color: white;
+  --button-color: #333; 
 }
 
 /*El tamaño de texto sigue estas normas: */
@@ -20,7 +24,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--button-color);
 }
 
 .container {
@@ -131,6 +135,10 @@ footer {
   text-decoration: underline;
 }
 
+section {
+  scroll-margin-top: 4rem;
+}
+
 header #sound-toggle, #install-button {
     background: var(--header-bg-color);
     color: var(--header-color)
@@ -155,7 +163,7 @@ header #sound-toggle {
 }
 
 .parallax {
-  background-image: url('https://ik.imagekit.io/kzkvm3mnmc/koreaTemple1920x1080_gCSSPq3mz?updatedAt=1750009541694');
+  background-image: url('https://ik.imagekit.io/kzkvm3mnmc/WhatsApp%20Image%202025-06-15%20at%2019.34.48_2330f9f0.jpg?updatedAt=1750093743128');
   height: 80vh;
   background-attachment: fixed;
   background-size: cover;
@@ -164,7 +172,7 @@ header #sound-toggle {
 }
 
 .parallax .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   color: white;
   position: absolute;
   top: 0; left: 0;
@@ -173,8 +181,30 @@ header #sound-toggle {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
+
+.parallax .overlay h1, .parallax .overlay h2 {
+  text-align: center;   
+}
+
+.parallax .overlay h2 {
+  max-width: 30rem;    
+}
+    
+.parallax .overlay a {
+  display: inline-block;
+  padding: 1em 3.5em;
+  background-color: var(--button-color);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.3em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  font-size: .875rem;
+  margin: 2rem;
+}
+
 
 .full {
   padding: 4rem 0;
@@ -265,4 +295,24 @@ header #sound-toggle {
 
 .gallery-scroll img:hover {
   transform: scale(1.2);
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: none; /* Hidden by default */
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--button-color);
 }

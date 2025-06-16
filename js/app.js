@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.pause();
             soundToggleBtn.textContent = '🔇 Sound Off';
         } else {
+            audio.muted = false;
             audio.play();
             soundToggleBtn.textContent = '🔊 Sound On';
         }
@@ -123,7 +124,20 @@ document.addEventListener('DOMContentLoaded', () => {
         autoScroll = setInterval(showNextImage, 3000);
     }
 
-// Initial scroll
+// Initial scroll in gallery
     scrollToIndex(currentIndex);
+
+//scroll to top button behavior
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Show the button after scrolling down 100px
+  window.onscroll = function () {
+    scrollTopBtn.style.display = window.scrollY > 100 ? "block" : "none";
+  };
+
+  // Scroll to top smoothly when clicked
+  scrollTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
 });
