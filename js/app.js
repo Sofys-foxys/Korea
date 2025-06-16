@@ -140,4 +140,79 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+
+//timeline
+  const steps = document.querySelectorAll(".step");
+  const timeline = document.querySelector(".timeline");
+  const line = document.querySelector(".line");
+
+  // Create and position circles aligned vertically with steps
+  steps.forEach((step, i) => {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    // Add class right or left for fly-in direction based on step side
+    circle.classList.add(step.classList.contains('right') ? 'right' : 'left');
+    timeline.appendChild(circle);
+  });
+
+  function positionCircles() {
+    const circles = timeline.querySelectorAll('.circle');
+    steps.forEach((step, i) => {
+      const circle = circles[i];
+      const circleTop = step.offsetTop + step.offsetHeight / 8;
+      circle.style.top = `${circleTop}px`;
+    });
+  }
+
+  let prevScrollY = window.scrollY;
+  let downDirection;
+  let full = false;
+  let set = 0;
+  const targetY = window.innerHeight;
+
+  function scrollHandler() {
+    const { scrollY } = window;
+    downDirection = scrollY < prevScrollY;
+
+    const timelineRect = timeline.getBoundingClientRect();
+    const remToPx = parseInt(getComputedStyle(document.documentElement).fontSize);
+
+    const dist = targetY - timelineRect.top;
+    const lineDist = dist - 7 * remToPx;
+
+    if (!downDirection && !full) {
+      set = Math.max(set, lineDist);
+      line.style.bottom = `calc(100% - ${set}px)`;
+    }
+
+    if (lineDist > timeline.offsetHeight - 7 * remToPx && !full) {
+      line.style.bottom = "7rem";
+      full = true;
+    }
+
+    const circles = timeline.querySelectorAll('.circle');
+
+    steps.forEach((step, i) => {
+      const rect = step.getBoundingClientRect();
+      if (rect.top + step.offsetHeight / 5 < targetY) {
+        setTimeout(() => {
+          step.classList.add("show-me");
+          circles[i].classList.add("circle-show");
+        }, i * 150);
+      }
+    });
+
+    prevScrollY = scrollY;
+  }
+
+  window.addEventListener('resize', () => {
+    positionCircles();
+  });
+
+  window.addEventListener('scroll', scrollHandler);
+
+  // Initial setup
+  positionCircles();
+  scrollHandler();
+  
 });
