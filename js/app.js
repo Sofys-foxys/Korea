@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://ik.imagekit.io/kzkvm3mnmc/SokchoJeongja.jpeg?updatedAt=1750154021118',
             'https://ik.imagekit.io/kzkvm3mnmc/SokchoPortal.jpeg?updatedAt=1750154117545',
             'https://ik.imagekit.io/kzkvm3mnmc/SokchoWaitingWoman.jpeg?updatedAt=1750154135734'],
-            title: 'Sokcho',
+            title: 'Sokcho, Where Koreans vacation',
             text: `The real vacation spot for koreans to go to the beach. There is a funny fenomenon in Korea
             where if you want to go to the beach you are going to find it closed—or at least in my experience—, more
             times that it's open. But that's not the case for Sokcho. Many tourist go there since it's near Sereoksan,
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/Hahoe50s.jpeg?updatedAt=1750157986580',
             'https://ik.imagekit.io/kzkvm3mnmc/HahoiView.jpeg?updatedAt=1750153182183',
             'https://ik.imagekit.io/kzkvm3mnmc/HahoeHouse.jpeg?updatedAt=1750153203184'],
-            title: 'Hahoe',
+            title: 'Hahoe, a look into the past',
             text: `While their attractions are fairly small, I have to highlight it. They had the niciest people
             and you can visit a reconstruction of a village of the Joseon Dinasty and near it you also have two movie
             sets for historical dramas: one from the 50's-80's and another from Joseon. It's something you need to see
