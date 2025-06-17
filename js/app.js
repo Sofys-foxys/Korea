@@ -260,13 +260,19 @@ document.addEventListener('DOMContentLoaded', () => {
             text: 'Round trip of around 1 month through South Korea'
         },
         {
-            images: ['https://ik.imagekit.io/kzkvm3mnmc/seoulLotteWorld300x200_BLUlpiB49?updatedAt=1750011501891',
-                'https://ik.imagekit.io/kzkvm3mnmc/seoulTemple300x200_zjKhJcnfI?updatedAt=1750011554082'],
+            images: ['https://ik.imagekit.io/kzkvm3mnmc/SeoulHanok.jpeg?updatedAt=1750155171965',
+                'https://ik.imagekit.io/kzkvm3mnmc/SeoulRiver.jpeg?updatedAt=1750155198305',
+                'https://ik.imagekit.io/kzkvm3mnmc/SeoulWings.jpeg?updatedAt=1750155213353',
+                'https://ik.imagekit.io/kzkvm3mnmc/SeoulMandu.jpeg?updatedAt=1750155225865',
+                'https://ik.imagekit.io/kzkvm3mnmc/SeoulPond.jpeg?updatedAt=1750154880453'],
             title: 'Title 2',
             text: 'Description for item 2.'
         },
         {
-            images: ['img3.jpg'],
+            images: ['https://ik.imagekit.io/kzkvm3mnmc/BusanCoast.jpeg?updatedAt=1750153139762',
+            'https://ik.imagekit.io/kzkvm3mnmc/BusanClock.jpeg?updatedAt=1750153388149',
+            'https://ik.imagekit.io/kzkvm3mnmc/BusanSea.jpeg?updatedAt=1750153359700',
+            'https://ik.imagekit.io/kzkvm3mnmc/BusanTemple.jpeg?updatedAt=1750153162008'],
             title: 'Title 3',
             text: 'Description for item 3.'
         },
