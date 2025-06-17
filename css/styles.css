@@ -388,21 +388,46 @@ header #sound-toggle {
     background-color: var(--button-color);
 }
 
-section#thegirl {
-    background: var(--bg-thegirl);
-    color: white;
+/*thegirl*/
+
+#thegirl .left-content,
+#thegirl .right-content {
+    box-sizing: border-box;
 }
 
-section#thegirl .left-content {
-    width : 30%;
-    height: 80%;
+#thegirl .left-content {
+    width: 30%;
+    height: auto;
     overflow: hidden;
 }
 
-section#thegirl .right-content {
-    width : 70%;
+#thegirl .left-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
+#thegirl .right-content {
+    width: 70%;
+}
+
+@media (max-width: 768px) {
+    .full-screen-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #thegirl .left-content,
+    #thegirl .right-content {
+        width: 100%;
+    }
+
+    #thegirl .right-content p {
+        padding: 0 10px;
+    }
+}
 section#korea {
     background: var(--bg-korea);
     color: white;
