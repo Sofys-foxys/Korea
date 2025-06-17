@@ -211,7 +211,7 @@ header #sound-toggle {
 
 #install-button {
     position: fixed;
-    left: 2rem;
+    left: 4rem;
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
