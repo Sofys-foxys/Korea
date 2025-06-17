@@ -739,11 +739,6 @@ position: relative;
     }
 }
 
-.section-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    text-align: center;
-}
-
 #exchange h1, #exchange h2 {
     text-align: center;
 }
