@@ -536,6 +536,10 @@ section#mystory{
     color: white;
 }
 
+.timeline .content h2 {
+    color: white;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .step {
