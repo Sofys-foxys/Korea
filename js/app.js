@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    //**SECTION PWA
     //Service worker registration. Installation button only appears if app not alreay isntalled.
     //Standard installation process overwritten 
     if ('serviceWorker' in navigator) {
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
     
-//toggle hamburguer menu for responsive design
+//**SECTION Navbar toggle hamburguer menu for responsive design
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.navbar');
     toggle.addEventListener('click', () => {
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-//gallery logic
+//**SECTION gallery
     const scrollContainer = document.querySelector(".gallery-scroll");
     const images = document.querySelectorAll(".gallery-track img");
     const leftBtn = document.querySelector(".nav-btn.left");
@@ -141,7 +142,32 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
-//timeline
+  //lightbox part of gallery
+  
+const thumbnails = document.querySelectorAll('.gallery-track img');
+const lightbox1 = document.getElementById('lightbox');
+const lightboxImg1 = document.getElementById('lightbox-img');
+/* const lightboxClose = document.getElementById('lightbox-close'); */ /*done elsewhere*/
+
+thumbnails.forEach(img => {
+  img.addEventListener('click', () => {
+    const fullImg = img.getAttribute('data-full');
+    lightboxImg1.src = fullImg;
+    lightbox1.style.display = 'flex';
+  });
+});
+
+/*handled by other carousel */
+/*
+lightboxClose.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+  lightboxImg.src = ''; // Clear image to prevent showing old one briefly
+});
+*/
+
+
+
+//**SECTION timeline
   const steps = document.querySelectorAll(".step");
   const timeline = document.querySelector(".timeline");
   const line = document.querySelector(".line");
@@ -214,5 +240,138 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial setup
   positionCircles();
   scrollHandler();
+  
+  
+  
+ // **SECTION my travels
+  const data = [
+    {
+      images: ['https://ik.imagekit.io/kzkvm3mnmc/TripSouthKorea.png?updatedAt=1750117121530' ],
+      title: 'Trip 2024',
+      text: 'Round trip of around 1 month through South Korea'
+    },
+    {
+      images: ['https://ik.imagekit.io/kzkvm3mnmc/seoulLotteWorld300x200_BLUlpiB49?updatedAt=1750011501891', 
+          'https://ik.imagekit.io/kzkvm3mnmc/seoulTemple300x200_zjKhJcnfI?updatedAt=1750011554082'],
+      title: 'Title 2',
+      text: 'Description for item 2.'
+    },
+    {
+      images: ['img3.jpg'],
+      title: 'Title 3',
+      text: 'Description for item 3.'
+    },
+    {
+      images: ['img4a.jpg', 'img4b.jpg'],
+      title: 'Title 4',
+      text: 'Description for item 4.'
+    },
+    {
+      images: ['img5.jpg'],
+      title: 'Title 5',
+      text: 'Description for item 5.'
+    },
+    {
+      images: ['img6a.jpg', 'img6b.jpg'],
+      title: 'Title 6',
+      text: 'Description for item 6.'
+    }
+  ];
+
+  const imageEl = document.getElementById('carousel-image');
+  const titleEl = document.getElementById('content-title');
+  const textEl = document.getElementById('content-text');
+  const buttons = document.querySelectorAll('.mini-navbar button');
+  const dotsContainer = document.getElementById('dots');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeLightbox = document.querySelector('.lightbox .close');
+
+  let sectionIndex = 0;
+  let imageIndex = 0;
+  let interval;
+
+  function updateDots(images, activeIndex) {
+    dotsContainer.innerHTML = '';
+    images.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === activeIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        imageIndex = i;
+        updateImage();
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateImage() {
+    const currentItem = data[sectionIndex];
+    const newImg = currentItem.images[imageIndex];
+    imageEl.style.opacity = 0;
+    setTimeout(() => {
+      imageEl.src = newImg;
+      imageEl.style.opacity = 1;
+      updateDots(currentItem.images, imageIndex);
+    }, 250);
+  }
+
+  function updateContent(index) {
+    const item = data[index];
+    sectionIndex = index;
+    imageIndex = 0;
+    titleEl.textContent = item.title;
+    textEl.textContent = item.text;
+    updateImage();
+
+    clearInterval(interval);
+    if (item.images.length > 1) {
+      interval = setInterval(() => {
+        imageIndex = (imageIndex + 1) % item.images.length;
+        updateImage();
+      }, 3000);
+    }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    const item = data[sectionIndex];
+    imageIndex = (imageIndex - 1 + item.images.length) % item.images.length;
+    updateImage();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const item = data[sectionIndex];
+    imageIndex = (imageIndex + 1) % item.images.length;
+    updateImage();
+  });
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = parseInt(btn.getAttribute('data-index'));
+      updateContent(index);
+    });
+  });
+
+  imageEl.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = imageEl.src;
+  });
+
+  closeLightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  // Initialize first content
+  updateContent(0);
+
+
   
 });

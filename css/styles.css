@@ -83,6 +83,11 @@ h5 {
     line-height: var(--line-height);
     font-weight: 500;
 }
+.section-title {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 /* Texto de párrafo común */
 p, .body {
@@ -105,6 +110,14 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
+    display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  text-align: right;
+  position: relative;
+  right: 8rem;
 }
 
 .nav-toggle {
@@ -139,19 +152,20 @@ footer {
 }
 
 section {
-    scroll-margin-top: 1rem;
+    scroll-margin-top: 2rem;
     background: var(--bg-color);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 40px;
 }
 
-/*all sections are full page */
+/*all sections are normally full page */
 .full-screen-section {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 40px;
-    box-sizing: border-box;
+
 }
 
 .left-content,
@@ -216,6 +230,11 @@ header #sound-toggle {
 
 .parallax.tokorea {
     background-image: url('https://ik.imagekit.io/kzkvm3mnmc/meInTheGardenOfTheMorningCalmKorea.jpg?updatedAt=1750099916109');
+    height: 100vh;
+}
+
+.parallax.toexchange {
+    background-image: url('https://ik.imagekit.io/kzkvm3mnmc/ColoredFountain?updatedAt=1750119024515');
     height: 100vh;
 }
 
@@ -390,26 +409,30 @@ section#korea {
 }
 
 section#korea p {
-width: 60%;
-  margin: 0 auto;       /* center horizontally */
-  text-align: center;   /* center the text inside */
+    width: 60%;
+    margin: 0 auto;       /* center horizontally */
+    text-align: center;   /* center the text inside */
 }
 
 /*timeline*/
 /* global variables that aren't generated in codepen */
 /* Base Styles */
-.timeline-container {
-  width: 100%;
-  max-width: 900px;
-  height: 100%;
-  }
 
-  .timeline {
+section#mystory{
+    height: auto; /*needed to allow for adaptive timelines */
+}
+.timeline-container {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+}
+
+.timeline {
     position: relative;
     padding: 2rem 0;
-  }
+}
 
- #mystory .line {
+#mystory .line {
     position: absolute;
     top: 0;
     bottom: 7rem;
@@ -419,10 +442,10 @@ width: 60%;
     transform: translateX(-50%);
     z-index: 0;
     transition: bottom 0.3s ease-out;
-  }
+}
 
-  /* Circles styling */
-  .timeline .circle {
+/* Circles styling */
+.timeline .circle {
     position: absolute;
     left: 50%;
     width: 16px;
@@ -432,77 +455,251 @@ width: 60%;
     opacity: 0;
     z-index: 2;
     transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-  }
-  .timeline .circle.left {
+}
+.timeline .circle.left {
     transform: translateX(-50%) translateX(-50px);
-  }
-  .timeline .circle.right {
+}
+.timeline .circle.right {
     transform: translateX(-50%) translateX(50px);
-  }
-  .timeline .circle.circle-show {
+}
+.timeline .circle.circle-show {
     opacity: 1;
     transform: translateX(-50%) translateX(0);
-  }
+}
 
-  /* Steps */
-  .step {
+/* Steps */
+.step {
     position: relative;
     width: 50%;
     padding: 2rem 1rem;
     box-sizing: border-box;
     opacity: 0;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  .step.left {
+}
+.step.left {
     left: 0;
     text-align: right;
     transform: translateX(-50px);
-  }
-  .step.right {
+}
+.step.right {
     left: 50%;
     text-align: left;
     transform: translateX(50px);
-  }
-  .step.show-me {
+}
+.step.show-me {
     opacity: 1;
     transform: translateX(0);
-  }
+}
 
-  .step.left .content {
+.step.left .content {
     margin-right: 60px;
-  }
-  .step.right .content {
+}
+.step.right .content {
     margin-left: 60px;
-  }
+}
 
-  .timeline .content {
-    background: #f9f9f9;
+.timeline .content {
+    background: var(--bg-thegirl);
     padding: 1rem;
     border-radius: 0.5rem;
     position: relative;
-  }
+}
 
-  /* Responsive */
-  @media (max-width: 768px) {
+.timeline .content p {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
     .step {
-      width: 100% !important;
-      left: 0 !important;
-      padding-left: 40px;
-      padding-right: 10px;
-      text-align: left !important;
-      transform: translateX(0) !important; /* no side sweep on mobile */
-      opacity: 1 !important; /* show on load */
-      transition: none !important;
+        width: 100% !important;
+        left: 0 !important;
+        padding-left: 40px;
+        padding-right: 10px;
+        text-align: left !important;
+        transform: translateX(0) !important; /* no side sweep on mobile */
+        opacity: 1 !important; /* show on load */
+        transition: none !important;
     }
 
     .timeline .circle {
-      left: 20px !important;
-      transform: none !important;
-      opacity: 1 !important;
-      transition: none !important;
+        left: 20px !important;
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
     }
 
     .step .content {
-      margin: 0 0 1rem 40px !important;
+        margin: 0 0 1rem 40px !important;
     }
-  }
+}
+
+/*my travels*/
+/*
+section{
+display: flex;
+flex-direction: row;
+height: 100vh;
+padding: 20px;
+box-sizing: border-box;
+position: relative;
+}
+*/
+.mytrips-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    height: 80%;
+}
+
+.carousel-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 90%;
+}
+
+#carousel-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+      width: 600px;
+  height: 400px;
+  object-fit: cover; /* optional: maintain visual quality */
+  display: block;
+    pointer-events: auto;
+  z-index: 1;
+}
+
+.carousel-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none; /* Let clicks pass through */
+}
+
+.carousel-arrows span {
+    font-size: 2rem;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    pointer-events: auto; /* Re-enable clicks on the actual arrows */
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-dots .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-dots .dot.active {
+    background-color: #717171;
+}
+
+.description-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mini-navbar {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.mini-navbar button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #eee;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.mini-navbar button:hover {
+    background: #ccc;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none; /* or display: flex when open */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+
+  /*display: flex; */ /*set in javascript*/
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#exchange h1, #exchange h2 {
+        text-align: center;
+}
+
+@media (max-width: 768px) {
+    .carousel-container, .description-container {
+        width: 100%;
+    }
+}
+
+section#bye {
+    background: var(--bg-korea);
+    color: white;
+    text-align: center;
+    height: 50vh;
+}
+
