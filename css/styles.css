@@ -199,6 +199,9 @@ section {
         flex-direction: column;
         text-align: center;
     }
+    section#korea, section#travels, section#exchange {
+        height: auto; 
+    }
 }
 
 header #sound-toggle, #install-button {
