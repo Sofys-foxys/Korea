@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*hide install-button when opening mobile menu */
         const installButton = document.getElementById('install-button');
-        if (toggle.classList.contains('active')) {
-            box.style.display = 'none';
+        if (nav.classList.contains('active')) {
+            installButton.style.display = 'none';
         } else {
-            box.style.display = 'block';
+            installButton.style.display = 'block';
             ;
         }
     });
