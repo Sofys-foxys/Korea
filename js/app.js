@@ -267,16 +267,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 'https://ik.imagekit.io/kzkvm3mnmc/SeoulWings.jpeg?updatedAt=1750155213353',
                 'https://ik.imagekit.io/kzkvm3mnmc/SeoulMandu.jpeg?updatedAt=1750155225865',
                 'https://ik.imagekit.io/kzkvm3mnmc/SeoulPond.jpeg?updatedAt=1750154880453'],
-            title: 'Title 2',
-            text: 'Description for item 2.'
+            title: 'Seoul, the city that never sleeps',
+            text: `It's the center of Korea. There is no doubt about it. The first time I visited I was surprised 
+            by the harsh contrast of tradition—with the hanoks, and modern—with the tall industrial buildings. It's a view that
+            you can quickly fall in love with. With the walks along the river, which part so many neighboorhoods. The street art,
+            the small mandu shops and the green scenery of Seoul Forest.`
         },
         {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/BusanCoast.jpeg?updatedAt=1750153139762',
             'https://ik.imagekit.io/kzkvm3mnmc/BusanClock.jpeg?updatedAt=1750153388149',
             'https://ik.imagekit.io/kzkvm3mnmc/BusanSea.jpeg?updatedAt=1750153359700',
             'https://ik.imagekit.io/kzkvm3mnmc/BusanTemple.jpeg?updatedAt=1750153162008'],
-            title: 'Title 3',
-            text: 'Description for item 3.'
+            title: 'Busan is Good',
+            text: `Before you say something about the title—that's the slogan for Busan. Yes, they are not the
+            best in this aspects haha. "Seoul, your Soul" Do you get the memo? Yes? great haha. Busan is the second
+            most popular city to visit and live in, with their coast, beutiful sunsets and their temples. While is not my
+            favourite—maybe I have yet to discover their wonders I believe is a must for a first timer.`
         },
         {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/GyeongjuBridge.jpeg?updatedAt=1750153710386',
@@ -284,8 +290,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuTomb.jpeg?updatedAt=1750153676955',
             'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuStreet.jpeg?updatedAt=1750153659732',
             'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuWolji.jpeg?updatedAt=1750153639679'],
-            title: 'Title 4',
-            text: 'Description for item 4.'
+            title: 'Gyeongju, The Open Museum',
+            text: `My favourite city alongside Suwon. You can discover so much about Korea and their history. While their most
+            famous dinasty is the Joseon Dinasty—and within reason since they existed for more that 800 years. The ones who united 
+            Korea and brought so many aspects from the chinese and japanese culture where Silla. There is not much found about them—
+            and their mistery appeals to me.`
+        
         },
         {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/SokchoCafe.jpeg?updatedAt=1750153876073',
@@ -293,15 +303,22 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://ik.imagekit.io/kzkvm3mnmc/SokchoJeongja.jpeg?updatedAt=1750154021118',
             'https://ik.imagekit.io/kzkvm3mnmc/SokchoPortal.jpeg?updatedAt=1750154117545',
             'https://ik.imagekit.io/kzkvm3mnmc/SokchoWaitingWoman.jpeg?updatedAt=1750154135734'],
-            title: 'Title 5',
-            text: 'Description for item 5.'
+            title: 'Sokcho',
+            text: `The real vacation spot for koreans to go to the beach. There is a funny fenomenon in Korea
+            where if you want to go to the beach you are going to find it closed—or at least in my experience—, more
+            times that it's open. But that's not the case for Sokcho. Many tourist go there since it's near Sereoksan,
+            one of the most popular mountrains for trekking in Korea. And by only focusing on that they miss this beutiful city
+            and their great seafood—the best we had in Korea!`
         },
         {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/Hahoe50s.jpeg?updatedAt=1750157986580',
             'https://ik.imagekit.io/kzkvm3mnmc/HahoiView.jpeg?updatedAt=1750153182183',
             'https://ik.imagekit.io/kzkvm3mnmc/HahoeHouse.jpeg?updatedAt=1750153203184'],
-            title: 'Title 6',
-            text: 'Description for item 6.'
+            title: 'Hahoe',
+            text: `While their attractions are fairly small, I have to highlight it. They had the niciest people
+            and you can visit a reconstruction of a village of the Joseon Dinasty and near it you also have two movie
+            sets for historical dramas: one from the 50's-80's and another from Joseon. It's something you need to see
+            at least once. I went to others, such as Andong but this was the most interactive and open one.`
         }
     ];
 
