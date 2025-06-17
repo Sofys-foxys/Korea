@@ -118,6 +118,7 @@ footer {
     text-align: right;
     position: relative;
     right: 5rem;
+    display: inline-block;
 }
 
 .nav-toggle {
@@ -684,6 +685,63 @@ position: relative;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mytrips-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .carousel-container,
+    .description-container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .carousel-wrapper {
+        max-width: 100%;
+    }
+
+    #carousel-image {
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+    }
+
+    .description-container {
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .mini-navbar {
+        position: static;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .mini-navbar button {
+        flex: 1 1 45%;
+        margin: 5px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .carousel-arrows span {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-align: center;
 }
 
 #exchange h1, #exchange h2 {
