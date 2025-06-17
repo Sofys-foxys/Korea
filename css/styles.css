@@ -114,10 +114,10 @@ footer {
     justify-content: space-between;
 }
 
-.right {
+#footer .right {
     text-align: right;
     position: relative;
-    right: 8rem;
+    right: 5rem;
 }
 
 .nav-toggle {
