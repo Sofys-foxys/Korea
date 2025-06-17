@@ -397,7 +397,7 @@ header #sound-toggle {
 
 #thegirl .left-content {
     width: 30%;
-    height: auto;
+    height: 90%;
     overflow: hidden;
 }
 
@@ -405,6 +405,7 @@ header #sound-toggle {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    object-fit: contain;
 }
 
 #thegirl .right-content {
