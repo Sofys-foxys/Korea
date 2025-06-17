@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.navbar');
     toggle.addEventListener('click', () => {
         nav.classList.toggle('active');
+        const box = document.getElementById('install-button');
+        box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
     });
     //soundToggle
     const soundToggleBtn = document.getElementById('sound-toggle');
