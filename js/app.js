@@ -256,8 +256,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = [
         {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/TripSouthKorea.png?updatedAt=1750117121530'],
-            title: 'Trip 2024',
-            text: 'Round trip of around 1 month through South Korea'
+            title: 'Road Trip 2024',
+            text: `With my father we decided to do a road trip around Korea to try to visit as much cities/villages as we could. In the image you can see some of the places we went to! Unfortunately
+            we couldn't visit them all due to time constrains, still we visit more that 15 places! We both agree that it was even better than the first time, in scenery, culture and food. If you can, please, visit some of the 
+            marked cities! You will not regret it.`
         },
         {
             images: ['https://ik.imagekit.io/kzkvm3mnmc/SeoulHanok.jpeg?updatedAt=1750155171965',
