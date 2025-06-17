@@ -477,7 +477,7 @@ section#mystory{
     left: 50%;
     width: 16px;
     height: 16px;
-    background: #d8b4fe;
+    background: #CD2E3A;
     border-radius: 50%;
     opacity: 0;
     z-index: 2;
@@ -537,7 +537,7 @@ section#mystory{
 }
 
 .timeline .content h2 {
-    color: white;
+    color: rgb(149, 192, 245);
 }
 
 /* Responsive */
