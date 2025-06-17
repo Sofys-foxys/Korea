@@ -277,17 +277,27 @@ document.addEventListener('DOMContentLoaded', () => {
             text: 'Description for item 3.'
         },
         {
-            images: ['img4a.jpg', 'img4b.jpg'],
+            images: ['https://ik.imagekit.io/kzkvm3mnmc/GyeongjuBridge.jpeg?updatedAt=1750153710386',
+            'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuRiver.jpeg?updatedAt=1750153694830',
+            'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuTomb.jpeg?updatedAt=1750153676955',
+            'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuStreet.jpeg?updatedAt=1750153659732',
+            'https://ik.imagekit.io/kzkvm3mnmc/GyeongjuWolji.jpeg?updatedAt=1750153639679'],
             title: 'Title 4',
             text: 'Description for item 4.'
         },
         {
-            images: ['img5.jpg'],
+            images: ['https://ik.imagekit.io/kzkvm3mnmc/SokchoCafe.jpeg?updatedAt=1750153876073',
+            'https://ik.imagekit.io/kzkvm3mnmc/SokchoBeach.jpeg?updatedAt=1750153891252',
+            'https://ik.imagekit.io/kzkvm3mnmc/SokchoJeongja.jpeg?updatedAt=1750154021118',
+            'https://ik.imagekit.io/kzkvm3mnmc/SokchoPortal.jpeg?updatedAt=1750154117545',
+            'https://ik.imagekit.io/kzkvm3mnmc/SokchoWaitingWoman.jpeg?updatedAt=1750154135734'],
             title: 'Title 5',
             text: 'Description for item 5.'
         },
         {
-            images: ['img6a.jpg', 'img6b.jpg'],
+            images: ['https://ik.imagekit.io/kzkvm3mnmc/Hahoe50s.jpeg?updatedAt=1750157986580',
+            'https://ik.imagekit.io/kzkvm3mnmc/HahoiView.jpeg?updatedAt=1750153182183',
+            'https://ik.imagekit.io/kzkvm3mnmc/HahoeHouse.jpeg?updatedAt=1750153203184'],
             title: 'Title 6',
             text: 'Description for item 6.'
         }
